@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/img/illustrations/falcon.png';
+import logo from '../../assets/img/aasaan-text.png';
 
 const Logo = ({ at, width, className, ...rest }) => {
   return (
@@ -26,8 +26,8 @@ const Logo = ({ at, width, className, ...rest }) => {
           className
         )}
       >
-        <img className="mr-2" src={logo} alt="Logo" width={width} />
-        <span className="text-sans-serif">falcon</span>
+        <img className="mr-2" src={logo} alt="Logo" width={125} />
+        <span className="text-sans-serif fs--1 ">affiliate</span>
       </div>
     </Link>
   );
@@ -39,6 +39,6 @@ Logo.propTypes = {
   className: PropTypes.string
 };
 
-Logo.defaultProps = { at: 'auth', width: 58 };
+Logo.defaultProps = { at: 'auth', width: 150 };
 
 export default Logo;

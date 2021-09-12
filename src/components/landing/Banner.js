@@ -15,7 +15,7 @@ const Banner = () => {
     <Section className="py-0 overflow-hidden vh-100" image={bg1} position="center center" overlay>
       <Row className="justify-content-center align-items-center pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
         <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left">
-          {/* <Button tag={Link} color="outline-danger" className="mb-4 fs--1 border-2x rounded-pill" to="#!">
+          {/* <Button tag={Link} className="mb-4 fs--1 border-2x rounded-pill btn-outline-light" to="#!">
             <span className="mr-2" role="img" aria-label="Gift">
               🎁
             </span>

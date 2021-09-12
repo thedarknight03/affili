@@ -16,9 +16,9 @@ const CustomTotal = ({ sizePerPage, totalSize, page, lastIndex }) => (
 );
 
 const customerFormatter = customerName => (
-  <Link to="pages/customer-details" className="font-weight-semi-bold">
+  <a href="`${customerName.aasaan.shop}`" className="font-weight-semi-bold">
     {customerName}
-  </Link>
+  </a>
 );
 
 const badgeFormatter = status => {
@@ -53,23 +53,37 @@ const amountFormatter = amount => <Fragment>${amount}</Fragment>;
 
 const columns = [
   {
-    dataField: 'customer',
-    text: 'Customer',
+    dataField: 'storeId',
+    text: 'Store Id',
     formatter: customerFormatter,
     classes: 'border-0 align-middle',
     headerClasses: 'border-0',
     sort: true
   },
   {
-    dataField: 'email',
-    text: 'Email',
+    dataField: 'URL',
+    text: 'Store URL',
     classes: 'border-0 align-middle',
     headerClasses: 'border-0',
     sort: true
   },
   {
-    dataField: 'product',
-    text: 'Product',
+    dataField: 'phoneNumber',
+    text: 'Phone Number',
+    classes: 'border-0 align-middle',
+    headerClasses: 'border-0',
+    sort: true
+  },
+  {
+    dataField: 'accountCreated',
+    text: 'Account Created On',
+    classes: 'border-0 align-middle',
+    headerClasses: 'border-0',
+    sort: true
+  },
+  {
+    dataField: 'subscriptionPlan',
+    text: 'Subscription Plan',
     classes: 'border-0 align-middle',
     headerClasses: 'border-0',
     sort: true
@@ -81,23 +95,23 @@ const columns = [
     classes: 'border-0 align-middle fs-0',
     headerClasses: 'border-0',
     sort: true
-  },
-  {
-    dataField: 'amount',
-    text: 'Amount',
-    formatter: amountFormatter,
-    classes: 'border-0 align-middle',
-    headerClasses: 'border-0',
-    sort: true,
-    align: 'right',
-    headerAlign: 'right'
-  },
-  {
-    dataField: 'action',
-    classes: 'border-0 align-middle',
-    headerClasses: 'border-0',
-    text: ''
   }
+  // {
+  //   dataField: 'amount',
+  //   text: 'Amount',
+  //   formatter: amountFormatter,
+  //   classes: 'border-0 align-middle',
+  //   headerClasses: 'border-0',
+  //   sort: true,
+  //   align: 'right',
+  //   headerAlign: 'right'
+  // },
+  // {
+  //   dataField: 'action',
+  //   classes: 'border-0 align-middle',
+  //   headerClasses: 'border-0',
+  //   text: ''
+  // }
 ];
 
 const SelectRowInput = ({ indeterminate, rowIndex, ...rest }) => (
@@ -165,7 +179,7 @@ const PurchasesTable = ({ setIsSelected }) => {
                 keyField="id"
                 data={purchases}
                 columns={columns}
-                selectRow={selectRow(onSelect)}
+                // selectRow={selectRow(onSelect)}
                 bordered={false}
                 classes="table-dashboard table-sm fs--1 border-bottom border-200 mb-0 table-dashboard-th-nowrap"
                 rowClasses="btn-reveal-trigger border-top border-200"

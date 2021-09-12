@@ -25,7 +25,7 @@ const DashboardLayout = ({ location }) => {
 
   return (
     <div className={isFluid ? 'container-fluid' : 'container'}>
-      <NavbarVertical />
+      {/* <NavbarVertical /> */}
       <ProductProvider>
         <div className="content">
           <NavbarTop />

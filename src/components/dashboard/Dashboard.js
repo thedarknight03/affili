@@ -19,18 +19,17 @@ const Dashboard = () => {
   const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
-    toast(
-      <Fragment>
-        Welcome to <strong>Falcon React</strong>!<br />
-        ReactJS Dashboard and WebApp Template
-      </Fragment>
-    );
+    // toast(
+    //   <Fragment>
+    //     Welcome to Aasaan
+    //   </Fragment>
+    // );
   }, []);
 
   return (
     <Fragment>
-      <PaymentsLineChart />
-      <Card className="bg-light mb-3">
+      {/* <PaymentsLineChart /> */}
+      {/* <Card className="bg-light mb-3">
         <CardBody className="p-3">
           <p className="fs--1 mb-0">
             <Link to="#!">
@@ -40,8 +39,8 @@ const Dashboard = () => {
             . Your next deposit is expected on <strong>Tuesday, March 13.</strong>
           </p>
         </CardBody>
-      </Card>
-      <div className="card-deck">
+      </Card> */}
+      <div className="card-deck mt-3">
         <CardSummary rate="-0.23%" title="Customers" color="warning" linkText="See all">
           58.39k
         </CardSummary>
@@ -54,44 +53,20 @@ const Dashboard = () => {
       </div>
       <Card className="mb-3">
         <FalconCardHeader title="Recent Purchases" light={false}>
-          {isSelected ? (
-            <InputGroup size="sm" className="input-group input-group-sm">
-              <CustomInput type="select" id="bulk-select">
-                <option>Bulk actions</option>
-                <option value="Refund">Refund</option>
-                <option value="Delete">Delete</option>
-                <option value="Archive">Archive</option>
-              </CustomInput>
-              <Button color="falcon-default" size="sm" className="ml-2">
-                Apply
-              </Button>
-            </InputGroup>
-          ) : (
-            <Fragment>
-              <ButtonIcon icon="plus" transform="shrink-3 down-2" color="falcon-default" size="sm">
-                New
-              </ButtonIcon>
-              <ButtonIcon icon="filter" transform="shrink-3 down-2" color="falcon-default" size="sm" className="mx-2">
-                Filter
-              </ButtonIcon>
-              <ButtonIcon icon="external-link-alt" transform="shrink-3 down-2" color="falcon-default" size="sm">
-                Export
-              </ButtonIcon>
-            </Fragment>
-          )}
+          
         </FalconCardHeader>
         <CardBody className="p-0">
           <PurchasesTable setIsSelected={setIsSelected} />
         </CardBody>
       </Card>
-      <Row noGutters>
+      {/* <Row noGutters>
         <Col lg="4" className="pr-lg-2">
           <ActiveUsersBarChart />
         </Col>
         <Col lg="8" className="pl-lg-2">
           <ActiveUsersMap />
         </Col>
-      </Row>
+      </Row> */}
     </Fragment>
   );
 };
