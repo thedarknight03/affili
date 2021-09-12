@@ -49,7 +49,7 @@ const NavbarStandard = () => {
     >
       <Container>
         <NavbarBrand className="text-white" tag={Link} to="/">
-        <img className="mr-2" src={logo} alt="Logo" width={150} />
+          <img className="mr-2" src={logo} alt="Logo" width={150} /> <span style={{fontSize: '14px'}}>affiliate</span>
         </NavbarBrand>
         {/* <Collapse isOpen={!navbarCollapsed} navbar>
           <Nav navbar className="ml-auto">

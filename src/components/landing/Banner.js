@@ -16,6 +16,7 @@ const Banner = () => {
   const [otp, setOtp] = useState('');
 
   const flipLoginRegister = () => {
+    setOtpInput(false);  
     setLogin(!login);
   };
 
@@ -24,19 +25,19 @@ const Banner = () => {
   };
 
   return (
-    <Section className="py-0 overflow-hidden vh-100" image={bg1} position="center center" overlay>
+    <Section className="py-0 pt-5 vh-100" image={bg1} position="center center" overlay>
       <Row className="pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
-        <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left pt-4">
+        <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left pt-4 d-none d-md-block">
           {/* <Button tag={Link} className="mb-4 fs--1 border-2x rounded-pill btn-outline-light" to="#!">
             <span className="mr-2" role="img" aria-label="Gift">
               🎁
             </span>
             Become a pro
           </Button> */}
-          <h1 className="text-white font-weight-light">
+          <h1 className="text-white font-weight-light d-sm-none d-md-block">
             ECommerce for
             <Typed
-              strings={['grocery', 'beauty', 'jewelary', 'any kind of']}
+              strings={['grocery', 'beauty', 'jewellery', 'furniture', 'any kind of']}
               typeSpeed={40}
               backSpeed={50}
               className="font-weight-bold pl-2"
@@ -153,7 +154,7 @@ const Banner = () => {
                           </div>
                           <span style={{
                             cursor: 'pointer'
-                          }} onClick={() => flipLoginRegister()}>Don't have an account? Register</span>
+                          }} onClick={() => flipLoginRegister()}>Go back to Login</span>
                       </div>
                   </div>
                 </>
