@@ -3,7 +3,7 @@ import Typed from 'react-typed';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import OtpInput from 'react-otp-input';
 import bg1 from '../../assets/img/affiliate.jpg';
 
 import Section from '../common/Section';
@@ -12,9 +12,15 @@ import AppContext from '../../context/Context';
 const Banner = () => {
   const { isDark } = useContext(AppContext);
   const [login, setLogin] = useState(false);
+  const [otpInput, setOtpInput] = useState(false);
+  const [otp, setOtp] = useState('');
 
   const flipLoginRegister = () => {
     setLogin(!login);
+  };
+
+  const handleSubmit = e => {
+    setOtpInput(true);    
   };
 
   return (
@@ -56,7 +62,7 @@ const Banner = () => {
         </Col>
         <Col xl={{ size: 5, offset: 1 }} className="pb-8">
             <div id="book" class="text-dark">
-              {!login && <form method="post" action="#">
+              {!login && !otpInput && <>
                   <h3 class="mb-4" style={{fontSize: '23px'}}>BECOME AN AASAAN AFFILIATE!</h3>
                   <div class="row">
                       <div class="col-lg-12">
@@ -93,16 +99,16 @@ const Banner = () => {
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="form-group">
-                              <button class="btn btn-dark m-t-10">REGISTER</button>
+                              <button onClick={() => handleSubmit()} class="btn btn-dark m-t-10">REGISTER</button>
                           </div>
                           <span className="pe-auto" style={{
                             cursor: 'pointer'
                           }} onClick={() => flipLoginRegister()}>Already have an account? Login</span>
                       </div>
                   </div>
-              </form>}
-              {login && 
-                <form method="post" action="#">
+              </>}
+              {login && !otpInput && 
+                <>
                   <h3 class="mb-4" style={{fontSize: '23px'}}>LOGIN TO YOUR ACCOUNT</h3>
                   <div class="row">
                       <div class="col-lg-12">
@@ -117,14 +123,40 @@ const Banner = () => {
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="form-group">
-                              <button class="btn btn-dark m-t-10">LOGIN</button>
+                              <button onClick={() => handleSubmit()} class="btn btn-dark m-t-10">Get OTP</button>
                           </div>
                           <span style={{
                             cursor: 'pointer'
                           }} onClick={() => flipLoginRegister()}>Don't have an account? Register</span>
                       </div>
                   </div>
-              </form>
+              </>
+              }
+              {otpInput && <>
+                  <h3 class="mb-4" style={{fontSize: '23px'}}>ENTER VERIFICATION CODE (OTP)</h3>
+                  <div class="row mb-4">
+                    <div class="col-lg-12 d-flex ">
+                      <OtpInput
+                        value={otp}
+                        inputStyle="inputStyle"
+                        onChange={setOtp}
+                        numInputs={6}
+                        otpType="number"
+                        separator={<span>-</span>}
+                        />
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="form-group">
+                              <button onClick={() => handleSubmit()} class="btn btn-dark m-t-10">LOGIN</button>
+                          </div>
+                          <span style={{
+                            cursor: 'pointer'
+                          }} onClick={() => flipLoginRegister()}>Don't have an account? Register</span>
+                      </div>
+                  </div>
+                </>
               }
           </div>
         </Col>
