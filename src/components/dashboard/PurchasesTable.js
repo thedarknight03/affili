@@ -141,7 +141,7 @@ const selectRow = onSelect => ({
 
 const options = {
   custom: true,
-  sizePerPage: 6,
+  sizePerPage: 12,
   totalSize: purchases.length
 };
 

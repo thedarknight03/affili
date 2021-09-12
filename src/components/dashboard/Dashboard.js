@@ -41,18 +41,18 @@ const Dashboard = () => {
         </CardBody>
       </Card> */}
       <div className="card-deck mt-3">
-        <CardSummary rate="-0.23%" title="Customers" color="warning" linkText="See all">
+        <CardSummary rate="-0.23%" title="Total Customers" color="warning">
           58.39k
         </CardSummary>
-        <CardSummary rate="0.0%" title="Orders" color="info" linkText="All orders">
+        <CardSummary rate="0.0%" title="Total Orders Placed" color="info">
           73.46k
         </CardSummary>
-        <CardSummary content="43,594" rate="9.54%" title="Revenue" color="success" linkText="Statistics">
-          <CountUp end={43594} duration={5} prefix="$" separator="," decimal="." />
+        <CardSummary title="Referral Link" color="success">
+          <span style={{fontSize: '15px'}}>https://demo.aasaan.app</span>
         </CardSummary>
       </div>
       <Card className="mb-3">
-        <FalconCardHeader title="Recent Purchases" light={false}>
+        <FalconCardHeader title="Referrals" light={false}>
           
         </FalconCardHeader>
         <CardBody className="p-0">
