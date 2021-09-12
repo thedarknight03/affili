@@ -27,7 +27,7 @@ export default [
     phoneNumber: '+91 4543218657',
     accountCreated: '15/08/2021',
     subscriptionPlan: 'basic',
-    status: 'blocked'
+    status: 'pending'
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ export default [
     phoneNumber: '+91 4543218657',
     accountCreated: '15/08/2021',
     subscriptionPlan: 'basic',
-    status: 'success',
+    status: 'deleted',
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ export default [
     phoneNumber: '+91 4543218657',
     accountCreated: '15/08/2021',
     subscriptionPlan: 'pro',
-    status: 'blocked',
+    status: 'pending',
   },
   {
     id: 6,

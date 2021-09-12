@@ -36,6 +36,11 @@ const badgeFormatter = status => {
       icon = 'ban';
       text = 'Blocked';
       break;
+    case 'deleted':
+      color = 'danger';
+      icon = 'trash';
+      text = 'Deleted';
+      break;
     default:
       color = 'warning';
       icon = 'stream';

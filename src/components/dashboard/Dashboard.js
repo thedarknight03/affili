@@ -9,6 +9,7 @@ import PaymentsLineChart from './PaymentsLineChart';
 import { toast } from 'react-toastify';
 import FalconCardHeader from '../common/FalconCardHeader';
 import ButtonIcon from '../common/ButtonIcon';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import loadable from '@loadable/component';
 const PurchasesTable = loadable(() => import('./PurchasesTable'));
@@ -41,14 +42,23 @@ const Dashboard = () => {
         </CardBody>
       </Card> */}
       <div className="card-deck mt-3">
-        <CardSummary rate="-0.23%" title="Total Customers" color="warning">
-          58.39k
+        <CardSummary rate="45" title="Total Customers" color="warning">
+          12
         </CardSummary>
-        <CardSummary rate="0.0%" title="Total Orders Placed" color="info">
-          73.46k
+        <CardSummary rate="-16" title="Total Orders Placed" color="info">
+          821
         </CardSummary>
         <CardSummary title="Referral Link" color="success">
-          <span style={{fontSize: '15px'}}>https://demo.aasaan.app</span>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '20px'
+          }}>
+            <span style={{fontSize: '15px'}}>https://demo.aasaan.app/?referral=referrer</span>
+            <CopyToClipboard text="https://demo.aasaan.app/?referral=referrer">
+              <FontAwesomeIcon icon="copy" transform="down-1.5" className="ml-1" style={{fontSize: '20px'}}/>
+            </CopyToClipboard>
+          </div>
         </CardSummary>
       </div>
       <Card className="mb-3">

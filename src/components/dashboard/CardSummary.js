@@ -34,7 +34,7 @@ const CardSummary = ({ title, rate, linkText, to, color, children }) => {
       <CardBody className="position-relative">
         <h6>
           {title}
-          <span className={`badge badge-soft-${color} rounded-capsule ml-2`}>{rate}</span>
+          {rate &&<span className={`badge badge-soft-${rate >= 0 ? 'success': 'warning'} rounded-capsule ml-2`}>{rate}% in last 30 days</span>}
         </h6>
         <div className={getContentClassNames(color)}>{children}</div>
         {linkText && <Link className="font-weight-semi-bold fs--1 text-nowrap" to={to}>
