@@ -35,7 +35,7 @@ const Banner = ({ match, history }) => {
   };
 
   return (
-    <Section className="py-0 pt-5 vh-100" image={bg1} position="center center" overlay>
+    <Section className="py-0 pt-5 vh-100 overflow-hidden" image={bg1} position="center center" overlay>
       <Row className="pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
         <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left pt-4 d-none d-md-block">
           {/* <Button tag={Link} className="mb-4 fs--1 border-2x rounded-pill btn-outline-light" to="#!">
@@ -78,7 +78,7 @@ const Banner = ({ match, history }) => {
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="form-group">
-                              <label>Full Name</label>
+                              <label>First Name</label>
                               <div class="form-group">
                                   <input type="text" class="form-control" />
                               </div>
