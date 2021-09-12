@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OtpInput from 'react-otp-input';
+import { withRouter } from 'react-router-dom';
 import bg1 from '../../assets/img/affiliate.jpg';
 
 import Section from '../common/Section';
 import AppContext from '../../context/Context';
 
-const Banner = () => {
+const Banner = ({ match, history }) => {
   const { isDark } = useContext(AppContext);
   const [login, setLogin] = useState(false);
   const [otpInput, setOtpInput] = useState(false);
@@ -20,8 +21,17 @@ const Banner = () => {
     setLogin(!login);
   };
 
+  const goBack = () => {
+    setOtpInput(false);  
+    setLogin(false);
+  };
+
   const handleSubmit = e => {
-    setOtpInput(true);    
+    setOtpInput(true);
+  };
+
+  const handleOTPSubmit = e => {
+    history.push('/dashboard')
   };
 
   return (
@@ -150,11 +160,11 @@ const Banner = () => {
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="form-group">
-                              <button onClick={() => handleSubmit()} class="btn btn-dark m-t-10">LOGIN</button>
+                              <button onClick={() => handleOTPSubmit()} class="btn btn-dark m-t-10">LOGIN</button>
                           </div>
                           <span style={{
                             cursor: 'pointer'
-                          }} onClick={() => flipLoginRegister()}>Go back to Login</span>
+                          }} onClick={() => goBack()}>Go back to home?</span>
                       </div>
                   </div>
                 </>
@@ -166,4 +176,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default withRouter(Banner);

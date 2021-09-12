@@ -17,7 +17,7 @@ const Landing = ({ location }) => {
     <Fragment>
       <NavbarStandard />
       <Banner />
-      <Partners />
+      {/* <Partners /> */}
       {/* <Processes /> */}
       {/* <Services /> */}
       {/* <Testimonial /> */}
