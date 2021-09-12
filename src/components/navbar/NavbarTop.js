@@ -32,12 +32,15 @@ const NavbarTop = () => {
       <Collapse navbar>
         <Nav navbar className="align-items-center d-none d-lg-block">
           <NavItem>
-            <SearchBox />
+            {/* <SearchBox /> */}
           </NavItem>
         </Nav>
 
         <Nav navbar className="align-items-center ml-auto">
           <NavItem>
+            Logout
+          </NavItem>
+          {/* <NavItem>
             <NavLink
               tag={Link}
               to="/e-commerce/shopping-cart"
@@ -54,7 +57,7 @@ const NavbarTop = () => {
             </NavLink>
           </NavItem>
           <NotificationDropdown />
-          <ProfileDropdown />
+          <ProfileDropdown /> */}
         </Nav>
       </Collapse>
     </Navbar>
