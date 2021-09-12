@@ -109,5 +109,23 @@ export default [
     accountCreated: '15/08/2021',
     subscriptionPlan: 'basic',
     status: 'pending',
+  },
+  {
+    id: 13,
+    storeId: 'bvvb445g',
+    URL: 'jewell12.aasaan.app',
+    phoneNumber: '+91 4543218657',
+    accountCreated: '15/08/2021',
+    subscriptionPlan: 'basic',
+    status: 'pending',
+  },
+  {
+    id: 14,
+    storeId: 'bvvb445g',
+    URL: 'jewell12.aasaan.app',
+    phoneNumber: '+91 4543218657',
+    accountCreated: '15/08/2021',
+    subscriptionPlan: 'basic',
+    status: 'pending',
   }
 ];

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Typed from 'react-typed';
 import { Link } from 'react-router-dom';
 import { Row, Col, Button } from 'reactstrap';
@@ -11,10 +11,16 @@ import AppContext from '../../context/Context';
 
 const Banner = () => {
   const { isDark } = useContext(AppContext);
+  const [login, setLogin] = useState(false);
+
+  const flipLoginRegister = () => {
+    setLogin(!login);
+  };
+
   return (
     <Section className="py-0 overflow-hidden vh-100" image={bg1} position="center center" overlay>
-      <Row className="justify-content-center align-items-center pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
-        <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left">
+      <Row className="pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
+        <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left pt-4">
           {/* <Button tag={Link} className="mb-4 fs--1 border-2x rounded-pill btn-outline-light" to="#!">
             <span className="mr-2" role="img" aria-label="Gift">
               🎁
@@ -22,7 +28,7 @@ const Banner = () => {
             Become a pro
           </Button> */}
           <h1 className="text-white font-weight-light">
-            Ecommerce for
+            ECommerce for
             <Typed
               strings={['grocery', 'beauty', 'jewelary', 'any kind of']}
               typeSpeed={40}
@@ -43,14 +49,14 @@ const Banner = () => {
               <p className="lead text-white">
               SIGN UP YOUR CUSTOMERS, READERS, AND FRIENDS TO AASAAN, AND EARN 20% OF THEIR SUBSCRIPTION COST FOREVER.
           </p>
-          <Link className="btn btn-outline-light border-2x rounded-pill btn-lg mt-4 fs-0 py-2" to="#!">
-            Affiliate Login
+          <div className="btn btn-outline-light border-2x rounded-pill btn-lg mt-4 fs-0 py-2" onClick={() => flipLoginRegister()}>
+            Affiliate {!login ? 'Login' : 'Register'}
             <FontAwesomeIcon icon="play" transform="shrink-6 down-1 right-5" />
-          </Link>
+          </div>
         </Col>
-        <Col xl={{ size: 5, offset: 1 }} className="align-self-end pb-8">
+        <Col xl={{ size: 5, offset: 1 }} className="pb-8">
             <div id="book" class="text-dark">
-              <form method="post" action="#">
+              {!login && <form method="post" action="#">
                   <h3 class="mb-4" style={{fontSize: '23px'}}>BECOME AN AASAAN AFFILIATE!</h3>
                   <div class="row">
                       <div class="col-lg-12">
@@ -89,9 +95,37 @@ const Banner = () => {
                           <div class="form-group">
                               <button class="btn btn-dark m-t-10">REGISTER</button>
                           </div>
+                          <span className="pe-auto" style={{
+                            cursor: 'pointer'
+                          }} onClick={() => flipLoginRegister()}>Already have an account? Login</span>
+                      </div>
+                  </div>
+              </form>}
+              {login && 
+                <form method="post" action="#">
+                  <h3 class="mb-4" style={{fontSize: '23px'}}>LOGIN TO YOUR ACCOUNT</h3>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="form-group">
+                              <label>Phone Number</label>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="form-group">
+                              <button class="btn btn-dark m-t-10">LOGIN</button>
+                          </div>
+                          <span style={{
+                            cursor: 'pointer'
+                          }} onClick={() => flipLoginRegister()}>Don't have an account? Register</span>
                       </div>
                   </div>
               </form>
+              }
           </div>
         </Col>
       </Row>

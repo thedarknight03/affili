@@ -51,6 +51,17 @@ const NavbarStandard = () => {
         <NavbarBrand className="text-white" tag={Link} to="/">
         <img className="mr-2" src={logo} alt="Logo" width={150} />
         </NavbarBrand>
+        {/* <Collapse isOpen={!navbarCollapsed} navbar>
+          <Nav navbar className="ml-auto">
+            <NavbarDropdown title="Login" right>
+              <Card className="navbar-card-login shadow-none">
+                <CardBody className="fs--1 font-weight-normal p-4">
+                  <Login />
+                </CardBody>
+              </Card>
+            </NavbarDropdown>
+          </Nav>
+        </Collapse> */}
       </Container>
     </Navbar>
   );
