@@ -95,7 +95,7 @@ const columns = [
   },
   {
     dataField: 'status',
-    text: 'Payment',
+    text: 'Status',
     formatter: badgeFormatter,
     classes: 'border-0 align-middle fs-0',
     headerClasses: 'border-0',
