@@ -12,7 +12,7 @@ import AppContext from '../../context/Context';
 const Banner = () => {
   const { isDark } = useContext(AppContext);
   return (
-    <Section className="py-0 overflow-hidden" image={bg1} position="center center" overlay>
+    <Section className="py-0 overflow-hidden vh-100" image={bg1} position="center center" overlay>
       <Row className="justify-content-center align-items-center pt-4 pt-lg-8 pb-lg-8 pb-xl-0">
         <Col md={11} lg={8} xl={6} className="pb-7 pb-xl-9 text-center text-xl-left">
           {/* <Button tag={Link} color="outline-danger" className="mb-4 fs--1 border-2x rounded-pill" to="#!">
@@ -22,16 +22,16 @@ const Banner = () => {
             Become a pro
           </Button> */}
           <h1 className="text-white font-weight-light">
-            Bring
+            Ecommerce for
             <Typed
-              strings={['design', 'beauty', 'elegance', 'perfection']}
+              strings={['grocery', 'beauty', 'jewelary', 'any kind of']}
               typeSpeed={40}
               backSpeed={50}
               className="font-weight-bold pl-2"
               loop
             />
             <br />
-            to your webapp
+            shops
           </h1>
           <p className="lead text-white">
             Become an Aasaan Affiliate and earn 20% commission forever!
@@ -51,7 +51,7 @@ const Banner = () => {
         <Col xl={{ size: 5, offset: 1 }} className="align-self-end pb-8">
             <div id="book" class="text-dark">
               <form method="post" action="#">
-                  <div class="mb-4" style={{fontSize: '23px'}}>BECOME AN AASAAN AFFILIATE!</div>
+                  <h3 class="mb-4" style={{fontSize: '23px'}}>BECOME AN AASAAN AFFILIATE!</h3>
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="form-group">

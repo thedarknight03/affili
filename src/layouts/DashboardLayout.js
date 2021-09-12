@@ -30,7 +30,7 @@ const DashboardLayout = ({ location }) => {
         <div className="content">
           <NavbarTop />
           <Switch>
-            <Route path="/" exact component={Dashboard} />
+            <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/dashboard-alt" exact component={DashboardAlt} />
             <DashboardRoutes />
           </Switch>

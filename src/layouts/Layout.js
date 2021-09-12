@@ -33,8 +33,8 @@ const Layout = () => {
         <Route path="/authentication/split" component={AuthSplitRoutes} />
         <Route path="/authentication/wizard" component={WizardLayout} />
         <Route path="/errors" component={ErrorLayout} />
-        <Route path="/dashboard" exact component={DashboardLayout} />
-        <Route component={AffliateLanding} />
+        <Route path="/dashboard" component={DashboardLayout} />
+        <Route component={Landing} />
       </Switch>
       <ToastContainer transition={Fade} closeButton={<CloseButton />} position={toast.POSITION.BOTTOM_LEFT} />
     </Router>
